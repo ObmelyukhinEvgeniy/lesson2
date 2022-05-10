@@ -22,8 +22,8 @@ public class MainApp {
             System.out.println("negative number");
         }
     }
-    public static boolean isNegative(int x) {
-        if (x < 0) {
+    public static boolean isNegative(int n) {
+        if (n < 0) {
             return true;
         } else {
             return false;
