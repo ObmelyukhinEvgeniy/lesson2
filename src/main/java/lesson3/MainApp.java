@@ -70,3 +70,27 @@ public class MainApp {
         }
     }
 }
+       /*if ((map[0][0].equals(mark) && map[0][1].equals(mark) && map[0][2].equals(mark))
+                || (map[1][0].equals(mark) && map[1][1].equals(mark) && map[1][2].equals(mark))
+                    || (map[2][0].equals(mark) && map[2][1].equals(mark) && map[2][2].equals(mark))
+        ) {
+            System.out.println(mark + " победа!");
+            return true;
+        }
+        else if ((map[0][0].equals(mark) && map[1][0].equals(mark) && map[2][0].equals(mark))
+                    || (map[0][1].equals(mark) && map[1][1].equals(mark) && map[2][1].equals(mark))
+                    || (map[0][2].equals(mark) && map[1][2].equals(mark) && map[2][2].equals(mark))
+        ) {
+            System.out.println(mark + " победа!");
+            return true;
+        }
+        else if ((map[0][0].equals(mark) && map[1][1].equals(mark) && map[2][2].equals(mark))
+                || (map[0][2].equals(mark) && map[1][1].equals(mark) && map[2][0].equals(mark))
+        ) {
+            System.out.println(mark + " победа!");
+            return true;
+        }
+        else {
+            return false;
+        }
+    }*/

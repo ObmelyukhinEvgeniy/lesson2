@@ -5,14 +5,25 @@ import java.util.Random;
 public class CrossesAndZerosApp {
     public static void main(String[] args) {
         String[][] map = initField(3);
+        boolean isGameActive = true;
         System.out.println("Поехали!");
+        printMap(map);
 
-        while (true) {
-            printMap(map);
+        while (isGameActive) {
+
             playerTurn(map);
+            printMap(map);
+            if (isWinner("X", map) || isDraw(map)) {
+                isGameActive = false;
+                break;
+            }
 
             computerTurn(map);
             printMap(map);
+            if (isWinner("0", map) || isDraw(map)) {
+                isGameActive = false;
+                break;
+            }
         }
     }
 
@@ -36,7 +47,7 @@ public class CrossesAndZerosApp {
     }
 
     public static void playerTurn(String[][] map) {
-        System.out.println("Смертная тварь ходит!");
+        System.out.println("Смертная тварь ходи!");
 
         Scanner sc = new Scanner(System.in);
 
@@ -80,8 +91,40 @@ public class CrossesAndZerosApp {
         System.out.println("Железяка сходила!");
     }
 
-    public static boolean isWinner() {
+    public static boolean isWinner(String mark, String[][] map) {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[0].length; j++) {
+                if ( map[i][0].equals(mark) && map[i][1].equals(mark) && map[i][2].equals(mark) ) {
+                    System.out.println(mark + " победа!");
+                    return true;
+                }
+                if ( map[0][j].equals(mark) && map[1][j].equals(mark) && map[2][j].equals(mark) ) {
+                    System.out.println(mark + " победа!");
+                    return true;
+                }
+                if ( map[0][0].equals(mark) && map[1][1].equals(mark) && map[2][2].equals(mark)
+                     || map[0][2].equals(mark) && map[1][1].equals(mark) && map[2][0].equals(mark) )
+                 {
+                    System.out.println(mark + " победа!");
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
+    public static boolean isDraw(String[][] map) {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map.length; j++) {
+                if (map[i][j].equals("*")) {
+                    return false;
+                }
+            }
+            System.out.println("Силы равны!");
+
+        }
+        return true;
+    }
+
 }
+
